@@ -14,7 +14,7 @@ omega = 0;
 for i = 1:10000
     M = [0,0,0];
     for j = 1:8
-        r = [0.2*sin(theta(1,j))*cos(delta), 0.2*cos(theta(1,j))*cos(delta),0.2*sin(delta)];
+        r = [0.2*sin(theta(1,j))*cos(delta), 0.2*cos(theta(1,j)),-0.2*sin(theta(1,j))*sin(delta)];
         Fj = [F(1,j)*sin(theta(1,j))*cos(alpha), F(1,j)*cos(theta(1,j))*cos(alpha), F(1,j)*sin(alpha)];
         if activate(1,j)==1
             M = M + cross(r,Fj);   
@@ -27,7 +27,7 @@ end
 for i = 1:(30000)
     M = [0,0,0];
     for j = 1:8
-        r = [0.2*sin(theta(1,j))*cos(delta), 0.2*cos(theta(1,j))*cos(delta),0.2*sin(delta)];
+        r = [0.2*sin(theta(1,j))*cos(delta), 0.2*cos(theta(1,j)),-0.2*sin(theta(1,j))*sin(delta)];
         Fj = [F(1,j)*sin(theta(1,j))*cos(alpha), F(1,j)*cos(theta(1,j))*cos(alpha), F(1,j)*sin(alpha)];
         % r
         % Fj
