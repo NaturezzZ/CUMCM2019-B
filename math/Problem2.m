@@ -22,7 +22,7 @@ for i = 1:10000
             M = M + cross(r,Fj);   
         end
     end
-    M
+    %M
     break;
     delta = delta + omega* 0.1/10000;
     omega = omega + norm(M)/I * 0.1/10000;
@@ -38,7 +38,7 @@ for i = 1:10000
         % Fj
         M = M + cross(r,Fj); 
     end
-    M
+    %M
     break;
     delta = delta + omega* 0.1/10000;
     omega = omega + norm(M)/I * 0.1/10000;
