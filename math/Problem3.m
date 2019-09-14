@@ -8,7 +8,7 @@ I = 0.0865;
 for i = 1:8
     theta(1,i) = pi*i/4 +bias;
 end
-alpha = 0.11/1.7;
+alpha = 0.14/1.7;
 delta = 0;
 omega = 0;
 % period 1
