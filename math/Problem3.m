@@ -77,3 +77,4 @@ for i = 1:(30000)
 end
 "period 3"
 ["omega","delta";omega,delta]
+
