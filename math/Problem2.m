@@ -1,3 +1,4 @@
+% 主要思想是，在鼓上升的过程中，减小鼓的倾斜角
 % 以对称轴为y轴，则各个力位于(4i/pi + bias)的位置
 F = [80,80,80,80,80,80,80,80];
 activate = [0,1,0,0,0,0,0,0];
@@ -23,13 +24,20 @@ for i = 1:10000
         end
     end
     %M
-    break;
+    % break;
     delta = delta + omega* 0.1/10000;
-    omega = omega + norm(M)/I * 0.1/10000;
+    omega = omega + M(1,2)/I * 0.1/10000;
+end
+delta
+
+for i = 1:8
+    if activate(1,i) ==1
+        F(1,i) = 0;
+    end
 end
 
 %second period
-for i = 1:10000
+for i = 1:40000
     M = [0,0,0];
     for j = 1:8
         r = [0.2*sin(theta(1,j))*cos(delta), 0.2*cos(theta(1,j))*cos(delta),0.2*sin(delta)];
@@ -39,8 +47,10 @@ for i = 1:10000
         M = M + cross(r,Fj); 
     end
     %M
-    break;
     delta = delta + omega* 0.1/10000;
-    omega = omega + norm(M)/I * 0.1/10000;
+    omega = omega + M(1,2)/I * 0.1/10000;
+    %M
+    %omega
+    %break;
 end
 delta
