@@ -1,7 +1,7 @@
 % 以对称轴为y轴，则各个力位于(4i/pi + bias)的位置
 F = [80,80,80,80,80,80,80,80];
-activate = [0,0,0,0,0,1,0,0];
-bias = 0;
+activate = [1,1,0,0,0,0,0,0];
+bias = pi/8;
 theta = [];
 I = 0.0865;
 for i = 1:8
@@ -24,7 +24,7 @@ for i = 1:10000
     omega = omega + M(1,2)/I * 0.1/10000;
 end
 %second period
-for i = 1:(30000)
+for i = 1:(10000)
     M = [0,0,0];
     for j = 1:8
         r = [0.2*sin(theta(1,j))*cos(delta), 0.2*cos(theta(1,j)),-0.2*sin(theta(1,j))*sin(delta)];
